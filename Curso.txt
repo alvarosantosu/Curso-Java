@@ -1,0 +1,48 @@
+import java.lang.String;
+
+public class Cuenta {
+	
+	public double cantidad;
+	public String titular=new String();
+
+	public void ingresar(double can) {
+		if(can>=0) {
+			cantidad+=can;
+		}
+		
+	}
+	public void retirar(double can) {
+		if(can<=cantidad) {
+			cantidad-=can;
+		}
+		
+	}
+	public Cuenta(String tit) {
+		cantidad=0;
+		titular=tit;
+		
+	}
+	public Cuenta(String tit,double can) {
+		cantidad=can;
+		titular=tit;
+	}
+}
+
+----------
+public class Arranque{
+	
+	public static void main(String[] args) {
+		       Cuenta per1 = new Cuenta("Antonio");
+		       System.out.println( per1.titular);
+		       System.out.println(per1.cantidad);
+		       Cuenta per2 = new Cuenta("Luis",3002.56);
+		       System.out.println( per2.titular);
+		       System.out.println(per2.cantidad);
+		       per1.ingresar(2034);
+		       System.out.println( per1.titular);
+		       System.out.println(per1.cantidad);
+		    
+		}
+}
+
+
